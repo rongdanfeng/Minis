@@ -1,4 +1,4 @@
-package org.minis;
+package org.minis.beans;
 
 import lombok.Data;
 @Data
