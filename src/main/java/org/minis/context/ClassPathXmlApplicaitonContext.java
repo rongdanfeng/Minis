@@ -11,7 +11,7 @@ import org.minis.core.Resource;
 import java.net.URL;
 import java.util.*;
 
-public class ClassPathXmlApplicaitonContext implements BeanFactory {
+public class ClassPathXmlApplicaitonContext implements BeanFactory ,ApplicationEventPublisher{
     BeanFactory beanFactory;
 
     public ClassPathXmlApplicaitonContext(String filename) {
@@ -31,8 +31,25 @@ public class ClassPathXmlApplicaitonContext implements BeanFactory {
     }
 
     @Override
-    public void registerBean(String beanName, Object obj) {
-        this.beanFactory.registerBean(beanName, obj);
+    public boolean isSingleton(String name) {
+        // TODO Auto-generated method stub
+        return false;
     }
 
+    @Override
+    public boolean isPrototype(String name) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+
+    @Override
+    public Class<?> getType(String name) {
+        return null;
+    }
+
+    @Override
+    public void publishEvent(ApplicationEvent event) {
+
+    }
 }
